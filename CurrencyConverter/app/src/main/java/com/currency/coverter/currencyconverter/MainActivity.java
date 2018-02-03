@@ -12,7 +12,9 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View button) {
 
         EditText editText = (EditText) findViewById(R.id.editText);
-        Toast.makeText(this,  "The INR equivalent is " + Double.parseDouble(editText.getText().toString())*64.14, Toast.LENGTH_LONG).show();
+        Double result = Double.parseDouble(editText.getText().toString());
+        result *= 64.14; 
+        Toast.makeText(this,  "The INR equivalent is " + String.format("%.2f",result), Toast.LENGTH_LONG).show();
         Log.i("Info","Button Clicked");
     }
 
